@@ -29,6 +29,7 @@ The dataset consists of 4 tables containing information regarding carbon emissio
 | 10261-2-2017 | 14         | 16         | 25                | 2017 | Multifunction Printers                                          | 110       | 1818                 | 25.08                      | 4.51                         | 70.41                        | 
 
 **Research questions**
+
 **1.Which products contribute the most to carbon emissions?**
 ```
 SELECT DISTINCT
@@ -84,11 +85,11 @@ LIMIT 10
 
 ```
  SELECT DISTINCT
- industry.industry_group AS Industry,
- sum(product.carbon_footprint_pcf) AS Total_Carbon_footprint
+ 	industry.industry_group AS Industry,
+ 	sum(product.carbon_footprint_pcf) AS Total_Carbon_footprint
  FROM product_emissions AS product
  LEFT JOIN industry_groups AS industry
- ON product.industry_group_id = industry.id
+ 	ON product.industry_group_id = industry.id
  GROUP BY industry.industry_group
  ORDER BY 2 DESC
  LIMIT 10'
@@ -111,14 +112,14 @@ Top 10 industries with the highest contribution to carbon emissions
 **4.What are the companies with the highest contribution to carbon emissions?**
 ```
  SELECT
- country.country_name,
- company.company_name AS company,
- sum(product.carbon_footprint_pcf) AS Total_Carbon_footprint
+ 	country.country_name,
+ 	company.company_name AS company,
+ 	sum(product.carbon_footprint_pcf) AS Total_Carbon_footprint
  FROM product_emissions AS product
  LEFT JOIN companies AS company
- ON product.company_id = company.id
+ 	ON product.company_id = company.id
  LEFT JOIN countries AS country
- ON product.country_id = country.id
+ 	ON product.country_id = country.id
  GROUP BY 2
  ORDER BY 3 DESC
  LIMIT 10
@@ -141,11 +142,11 @@ Top 10 companies with the highest contribution to carbon emissions
 **5. What are the countries with the highest contribution to carbon emissions?**
 ```
  SELECT
- country.country_name,
- sum(product.carbon_footprint_pcf) AS Total_Carbon_footprint
+ 	country.country_name,
+ 	sum(product.carbon_footprint_pcf) AS Total_Carbon_footprint
  FROM product_emissions AS product
  LEFT JOIN countries AS country
- ON product.country_id = country.id
+ 	ON product.country_id = country.id
  GROUP BY 1
  ORDER BY 2 DESC
  LIMIT 10
@@ -168,10 +169,10 @@ Top 10 countries with the highest contribution to carbon emissions
 **6.What is the trend of carbon footprints (PCFs) over the years?**
 ```
  SELECT
- year AS Time,
- SUM(carbon_footprint_pcf) as 'Carbon emission'
+ 	year AS Time,
+ 	SUM(carbon_footprint_pcf) as 'Carbon emission'
  FROM
- product_emissions
+	 product_emissions
  GROUP BY year
  ORDER BY year
 ```
@@ -188,13 +189,13 @@ Trend of carbon footprints (PCFs) from 2013-2017
 **7. Which industry groups has demonstrated the most notable decrease in carbon footprints (PCFs) over time?**
 ```
  SELECT
- product.year AS Time,
- industry.industry_group,
- SUM(product.carbon_footprint_pcf)
+	product.year AS Time,
+ 	industry.industry_group,
+ 	SUM(product.carbon_footprint_pcf)
  FROM
- product_emissions AS product
+ 	product_emissions AS product
  LEFT JOIN industry_groups AS industry
- ON product.industry_group_id = industry.id
+ 	ON product.industry_group_id = industry.id
  GROUP BY 2, 1
  ORDER BY 2, 1, 3 DESC
 ```
