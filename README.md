@@ -219,6 +219,7 @@ Trend of carbon footprints (PCFs) from 2013-2017
 | 2016 | Automobiles & Components                                               | 1404833                           | 
 
 **Key Insights from Carbon Emission Data**
+
 Based on the provided data and SQL query results, here are the key insights, interesting facts, and patterns discovered.
 
  **1. Products and Industries**
