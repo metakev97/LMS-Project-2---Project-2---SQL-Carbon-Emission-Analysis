@@ -1,7 +1,7 @@
 # SWProject-2
 **Carbon Emissions Analysis**
 
-![image info](./pictures/thumbnailimage.png)
+![alt text](https://github.com/metakev97/LMS-Project-2---Project-2---SQL-Carbon-Emission-Analysis/blob/main/thumbnail%20image.png)
 
 **Here are some data samples**
 | id           | company_id | country_id | industry_group_id | year | product_name                                                    | weight_kg | carbon_footprint_pcf | upstream_percent_total_pcf | operations_percent_total_pcf | downstream_percent_total_pcf | 
