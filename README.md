@@ -1,6 +1,8 @@
 # SWProject-2
 **Carbon Emissions Analysis**
-![alt text](thumbnail image.png "Title")
+
+![image info](./pictures/thumbnailimage.png)
+
 **Here are some data samples**
 | id           | company_id | country_id | industry_group_id | year | product_name                                                    | weight_kg | carbon_footprint_pcf | upstream_percent_total_pcf | operations_percent_total_pcf | downstream_percent_total_pcf | 
 | -----------: | ---------: | ---------: | ----------------: | ---: | --------------------------------------------------------------: | --------: | -------------------: | -------------------------: | ---------------------------: | ---------------------------: | 
